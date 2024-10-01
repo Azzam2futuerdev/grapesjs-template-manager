@@ -113,6 +113,7 @@ export default class TemplateManager extends UI {
         const { projectId, nameText } = this.state;
         const id = editor.runCommand('get-uuidv4');
         const name = nameText || 'New-' + id.substring(0, 8);
+        const indexPageId = editor.runCommand('get-uuidv4');
         const def = {
             id,
             name,
@@ -120,7 +121,7 @@ export default class TemplateManager extends UI {
             thumbnail: '',
             styles: '[]',
             description: 'No description',
-            pages: `[{"id": "${crypto.randomUUID().substring(0, 13)}", "name": "index"}]`,
+            pages: `[{"id": "${indexPageId}", "name": "index"}]`,
             styles: '[]',
             assets: '[]'
         };
